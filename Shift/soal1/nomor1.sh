@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "Region yang memiliki profit paling Sedikit : "
+satua=`awk -F "," 'FNR>1{(seen[$13]+=$NF)}END{for(i in seen) print i, seen[i]}' Sample-Superstore.csv | sort -gk2 | awk 'FNR < 2{print $1}'`
+echo "$satua"
+echo "$2 State dengan Profit terkecil adalah : "
+satub=`awk -F "," -v a=$satua 'NR>1 {if(match($13, a))seen[$11]+=$NF} END{for(i in seen) printf "%s,%f\n", i, seen[i]}' Sample-Superstore.csv | sort -g -t "," -k2 | awk -F "," 'FNR < 3{printf "%s ", $1}'`
+
+c1=`echo "$satub" | awk -F " " '{printf "%s ",$1}'`
+c2=`echo "$satub" | awk -F " " '{printf "%s",$2}'`
+
+echo "$c1"
+echo "$c2"
+
+echo " "
+echo "10 produk di $c1"
+satuc1=`awk -F "," -v x1=$c1 'NR>1 {if(match($11, x1))seen[$17]+=$NF}END{for(i in seen) printf "%s@%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "@" -k2 | awk -F "@" 'NR < 11 {print $1}'`
+echo "$satuc1"
+
+echo " "
+echo "10 produk di $c2"
+satuc2=`awk -F "," -v x2=$c2 'NR>1 {if(match($11, x2))seen[$17]+=$NF}END{for(i in seen) printf "%s@%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "@" -k2 | awk -F "@" 'NR < 11 {print $1}'`
+echo "$satuc2"
