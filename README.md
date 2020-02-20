@@ -62,7 +62,7 @@
 2. bash soal2_enkripsi.sh *NAMAFILE*
 3. bash soal2_dekripsi.sh *NAMAFILE YANG TELAH DI ENKRIPSI*
 
-###Dua a & b
+### Dua a & b
 
 /* Foto Dua A
 
