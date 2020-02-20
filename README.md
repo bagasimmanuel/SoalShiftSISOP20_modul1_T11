@@ -1,7 +1,7 @@
 # SoalShiftSISOP20_modul1_T11
 ## Nomor 1
 ### Satu A
-![Image of 1a](Shift/images/satuA.png)
+![Image of 1A](Shift/images/satuA.png)
 1. `awk -F ","`  --> dengan , sebagai separator daripada column yang ada di csv.
 2. `FNR > 1 ` --> yang berartikan mulai dari Row ke 2, dikarenakan row 1 merupakan judul seperti Row Id, Product name, dll
 3. `seen[$13]+=$NF` --> yang berartikan bahwa variable seen, yang memiliki index $13 (Antara lain West, South,Central,East) dan +=NF
@@ -13,7 +13,7 @@
 
 
 ### Satu B
-/* Foto
+![Image of 1B](Shift/images/satuB.png)
 
 1. `awk -F ","` --> separator ","
 2. `-v a=$satua` --> Menyimpan nilai satua, ke dalam variable a
@@ -26,12 +26,12 @@
 
 ### satu C
 
-/* Foto deklarasi variable
+![Image of 1C](Shift/images/satuCDeklarasiVariable.png)
 
 1. `c1= echo "$satub" | awk -F " " '{printf "%s ",$1}'` --> Gunakan output echo satub dan Separate dengan separator " ", kemudian ambil $1
 2. `c1= echo "$satub" | awk -F " " '{printf "%s ",$2}'` --> Gunakan output echo satub dan Separate dengan separator " ", kemudian ambil $2
 
-/* Foto state Pertama
+![Image of 1C](Shift/images/SatuCStatePertama.png)
 
 1. `awk -F ","` --> separator ","
 2. `-v x1=$c1` --> Deklarasi variable x1
@@ -42,7 +42,8 @@
 7. `| sort -g -t "@" -k2 |` --> Sort dengan separator "@", sehingga kolom ke dua adalah angka, kemudian sort kolom kedua dengan sort -g
 8. `awk -F "@" 'NR < 11 {print $1}'` --> Dengan Separator @, Print 10 Nama barang teratas (setelah sort) ($1) yaitu Nama Barang itu  
 
-/* Foto state kedua
+![Image of 1C](Shift/images/SatuCStateKedua.png)
+
 
 1. `awk -F ","` --> separator ","
 2. `-v x2=$c2` --> Deklarasi variable x2
@@ -63,7 +64,7 @@
 
 ### Dua a & b
 
-/* Foto Dua A
+![Image of 2A & B](Shift/images/duaA.png)
 
 1. `a=$(echo $1 | tr -d [:digit:])` --> Deklarasi Variable a yang berisikan echo $1 yang telah dihapuskan digit dengan function -tr(translate) -d [:digit:]
 2. `< /dev/urandom tr -dc A-Za-z0-9 | head -c28  > $a.txt` --> Function random dengan parameter (batas hanya alphabet dan angka) sebanyak 28 karakter dan dimasukan ke file $a.txt
@@ -72,7 +73,7 @@
 
 ### Dua C
 
-/* Foto Dua C
+![Image of 2C](Shift/images/duaC.png)
 
 1. `a="$1"` --> Variable a adalah Argumen yang diinputkan`
 2. `jam=awk -v a=$a -F ";" 'FNR>1 {if(match($1, a))print $2}' log.csv` --> Variable Jam diambil dari database (log.csv) dengan key yaitu nama file itu sendiri
@@ -86,7 +87,7 @@
 
 ### Dua D
 
-/* Foto Dua D
+![Image of 2D](Shift/images/duaD.png)
 
 1. `a="$1"` --> Variable a adalah Argumen yang diinputkan`
 2. `jam=awk -v a=$a -F ";" 'FNR>1 {if(match($1, a))print $2}' log.csv` --> Variable Jam diambil dari database (log.csv) dengan key yaitu nama file itu sendiri
