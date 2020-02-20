@@ -1,6 +1,7 @@
 # SoalShiftSISOP20_modul1_T11
 ## Nomor 1
 ### Satu A
+![Image of 1a]
 (https://github.com/bagasimmanuel/SoalShiftSISOP20_modul1_T11/blob/master/Shift/images/satuA.png)
 1. `awk -F ","`  --> dengan , sebagai separator daripada column yang ada di csv.
 2. `FNR > 1 ` --> yang berartikan mulai dari Row ke 2, dikarenakan row 1 merupakan judul seperti Row Id, Product name, dll
