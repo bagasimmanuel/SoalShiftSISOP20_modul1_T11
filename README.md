@@ -1,8 +1,7 @@
 # SoalShiftSISOP20_modul1_T11
 ## Nomor 1
-### Satu a
-/* Foto
-
+### Satu A
+(https://github.com/bagasimmanuel/SoalShiftSISOP20_modul1_T11/blob/master/Shift/images/satuA.png)
 1. `awk -F ","`  --> dengan , sebagai separator daripada column yang ada di csv.
 2. `FNR > 1 ` --> yang berartikan mulai dari Row ke 2, dikarenakan row 1 merupakan judul seperti Row Id, Product name, dll
 3. `seen[$13]+=$NF` --> yang berartikan bahwa variable seen, yang memiliki index $13 (Antara lain West, South,Central,East) dan +=NF
@@ -13,7 +12,7 @@
 7. `awk FNR < 2{print $1}` --> Melakukan proses print nama Region yang berada di posisi teratas (Profit Terkecil)
 
 
-### Satu b
+### Satu B
 /* Foto
 
 1. `awk -F ","` --> separator ","
@@ -25,7 +24,7 @@
 7. `sort -g -t "," -k2` --> Sort berdasarkan generic number, dan juga dengan separator "," (Dikarenakan pada nomor 5 di print dengan separator "," dan dan juga sort pada kolom ke 2(setelah di separate))
 8. `awk -F "," 'FNR < 3 {printf "%s ", $1}'` --> Print 2 nama teratas pada data yang telah disort
 
-### satuc
+### satu C
 
 /* Foto deklarasi variable
 
