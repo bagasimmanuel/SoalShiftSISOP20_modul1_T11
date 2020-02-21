@@ -1,0 +1,26 @@
+#!/bin/bash
+
+a=`mkdir kenangan`
+b=`mkdir duplicate`
+
+tes=`ls | grep "pdkt_kusuma_" | cut -d "_" -f 3 | sort -n | tail -1`
+
+arr=""
+for ((i=1;i<=tes;i=i+1))
+do
+abc="`cat wget.log | grep "Location" | head -$i | tail -1 | cut -d " " -f 2`"
+dupkah=`echo -e $arr | awk -v loc=$abc 'BEGIN{dupkahlagi=0} {if(loc=0) dupkahlagi=1} END' {printf "%d", dupkahlagi}`
+
+if [[ dupkah==1 ]]
+then
+mv pdkt_kusuma_$i duplicate/duplicate_$i
+
+else
+mv pdkt_kusuma_$i kenangan/kenangan_$i
+
+arr="$arr$log\n"
+fi
+done
+
+cat wget.log >> wget.log.bak
+rm wget.log
