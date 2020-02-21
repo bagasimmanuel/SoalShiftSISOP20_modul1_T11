@@ -11,7 +11,7 @@ fi
 a=`expr $tes + 1`
 b=`expr $tes + 28`
 
-for ((i=a;i<b;i=i+1))
+for ((i=a;i<=b;i=i+1))
 do
 wget -a wget.log -O "pdkt_kusuma_$i" https://loremflickr.com/320/240/cat
 done
