@@ -100,7 +100,7 @@
 2. `/bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh` --> menjalankan soal3.sh pada direktori tersebut
 
 ### Tiga C
-![Image of 3C](Shift/images/tigac.PNG)
+![Image of 3C](Shift/images/TigaC.png)
 1. `a=mkdir kenangan b=mkdir duplicate` --> Membuat kenangan dan duplikat
 2. `x=1 y=1` --> Deklarasi nilai x dan y
 3. `ls | grep "pdkt_kusuma_"` --> menampilkan file yang memiliki nama pdkt_kusuma_
