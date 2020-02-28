@@ -12,11 +12,11 @@ jam=`awk -v a=$a -F ";" 'FNR>1 {if(match($1, a))print $2}' log.csv`
 alphabetAwalValue=`expr $jam + 97`
 #echo $alphabet
 alphabetAwal=`awk -v a=$alphabetAwalValue 'BEGIN{printf "%c", a}'`
-echo $alphabetAwal
+#echo $alphabetAwal
 alphabetAkhirValue=`expr $alphabetAwalValue - 1`
 alphabetAkhir=`awk -v a=$alphabetAkhirValue 'BEGIN{printf "%c", a}'`
-echo $alphabetAkhir
-echo $a
+#echo $alphabetAkhir
+#echo $a
 newName=`echo $a | tr '['$alphabetAwal'-za-'$alphabetAkhir']' '[a-z]'`
-echo "$newName"
+#echo "$newName"
 mv "$a".txt "$newName.txt"

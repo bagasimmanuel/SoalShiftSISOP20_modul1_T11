@@ -12,11 +12,13 @@ echo "$c1"
 echo "$c2"
 
 echo " "
-echo "10 produk di $c1"
-satuc1=`awk -F "," -v x1=$c1 'NR>1 {if(match($11, x1))seen[$17]+=$NF}END{for(i in seen) printf "%s@%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "@" -k2 | awk -F "@" 'NR < 11 {print $1}'`
-echo "$satuc1"
+echo -e "10 produk dengan profit terkecil dari State $c1 dan State $c2 adalah \n"
+satuc1=`awk -F "," -v x1=$c1 'NR>1 {if(match($11, x1))seen[$17]+=$NF}END{for(i in seen) printf "%s^%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "^" -k2 | awk -F "^" 'NR < 11 {print $0}'`
+#echo "$satuc1"
+satuc2=`awk -F "," -v x2=$c2 'NR>1 {if(match($11, x2))seen[$17]+=$NF}END{for(i in seen) printf "%s^%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "^" -k2 | awk -F "^" 'NR < 11 {print $0}'`
+#echo "$satuc2"
 
-echo " "
-echo "10 produk di $c2"
-satuc2=`awk -F "," -v x2=$c2 'NR>1 {if(match($11, x2))seen[$17]+=$NF}END{for(i in seen) printf "%s@%f\n", i,seen[i]}' Sample-Superstore.csv | sort -g -t "@" -k2 | awk -F "@" 'NR < 11 {print $1}'`
-echo "$satuc2"
+#satuc=`awk -F "@" $satuc1$satuc2 | sort -g -k2`
+#echo $satuc 
+#echo "$satuc1$satuc2" | sort -g -t "^" -k2 | awk  -F "^" '{printf "%s%f\\n\n",$1,$2}'
+echo -e "$satuc1$satuc2" | awk -F "^" '{printf "%s%f\\n\n",$0,$1}' | sort -g -t "^" -k2 | awk -F "^"  'NR < 11 {printf "%s\n",$1}'

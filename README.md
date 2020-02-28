@@ -31,28 +31,13 @@
 1. `c1= echo "$satub" | awk -F " " '{printf "%s ",$1}'` --> Gunakan output echo satub dan Separate dengan separator " ", kemudian ambil $1
 2. `c1= echo "$satub" | awk -F " " '{printf "%s ",$2}'` --> Gunakan output echo satub dan Separate dengan separator " ", kemudian ambil $2
 
-![Image of 1C](Shift/images/SatuCStatePertama.png)
+![Image of 1C](Shift/images/SatuC.png)
 
-1. `awk -F ","` --> separator ","
-2. `-v x1=$c1` --> Deklarasi variable x1
-3. `NR>1` --> Start dari row ke 2
-4. `{if(match($11, x1))seen[$17]+=$NF}` --> Untuk setiap State yang cocok, maka buat array dengan index product name dan tambahkan profil tiap Product
-5. `END{for(i in seen) printf "%s@%f\n", i,seen[i]}'` --> Untuk setiap product name, print Product name dan juga profit total dengan separator "@"
-6. `Sample-Superstore.csv` --> Nama File
-7. `| sort -g -t "@" -k2 |` --> Sort dengan separator "@", sehingga kolom ke dua adalah angka, kemudian sort kolom kedua dengan sort -g
-8. `awk -F "@" 'NR < 11 {print $1}'` --> Dengan Separator @, Print 10 Nama barang teratas (setelah sort) ($1) yaitu Nama Barang itu  
+1. `echo -e "satuc1satuc2"` --> Menggabungkan hasil echo var satuc1 dan satuc2
+2. `awk -F "^"'{printf "%s%f\\n\n",$0,$1}'` --> Melakukan separasi dengan '^' kemudian melakukan Print
+3. `sort -g -t "^" -k2` --> Melakukan sort dengan generic number dengan separator "^" pada field ke 2
+4. `awk -F "^" 'NR < 11 {printf %s\n,$1}'` --> Melakukan print 10 nama produk dengan profit terkecil 
 
-![Image of 1C](Shift/images/SatuCStateKedua.png)
-
-
-1. `awk -F ","` --> separator ","
-2. `-v x2=$c2` --> Deklarasi variable x2
-3. `NR>1` --> Start dari row ke 2
-4. `{if(match($11, x2))seen[$17]+=$NF}` --> Untuk setiap State yang cocok, maka buat array dengan index product name dan tambahkan profil tiap Product
-5. `END{for(i in seen) printf "%s@%f\n", i,seen[i]}'` --> Untuk setiap product name, print Product name dan juga profit total dengan separator "@"
-6. `Sample-Superstore.csv` --> Nama File
-7. `| sort -g -t "@" -k2 |` --> Sort dengan separator "@", sehingga kolom ke dua adalah angka, kemudian sort kolom kedua dengan sort -g
-8. `awk -F "@" 'NR < 11 {print $1}'` --> Dengan Separator @, Print 10 Nama barang teratas (setelah sort) ($1) yaitu Nama Barang itu
 
 
 
