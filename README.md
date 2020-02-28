@@ -33,11 +33,11 @@
 
 ![Image of 1C](Shift/images/satuCa.png)
 
-1. `echo -e "satuc1satuc2"` --> Menggabungkan hasil echo var satuc1 dan satuc2
-2. `awk -F "^"'{printf "%s%f\\n\n",$0,$1}'` --> Melakukan separasi dengan '^' kemudian melakukan Print
-3. `sort -g -t "^" -k2` --> Melakukan sort dengan generic number dengan separator "^" pada field ke 2
-4. `awk -F "^" 'NR < 11 {printf %s\n,$1}'` --> Melakukan print 10 nama produk dengan profit terkecil 
-
+1. `echo -e "10 produk dengan profit terkecil dari State $c1 dan State $c2 adalah \n"` --> menampilkan kata kata 10 produk dengan profit terkecil dari State texas dan State illinoise adalah
+2. `awk -F "," -v x2=$c2 -v x1=$c1` --> melakukan pemisahan separator lalu mendeklarasikan variabel x2 dan x1 dengan nilai c2 dan c1  
+3. `'NR>1 {if((match($11, x2)) || (match($11,x1)))seen[$17]+=$NF}END{for(i in seen) printf "%s^%f\n", i,seen[i]}' Sample-Superstore.csv` --> jika di field 11 atau 12 dari Sample-Superstore.csv dengan x2 atau x1 maka tambahkan di field 17, dan di print 
+4. `sort -g -t "^" -k2` --> Melakukan sort dengan generic number dengan separator "^" pada field ke 2
+5. `awk -F "^" 'NR < 11 {print $0}'`--> Melakukan print 10 nama produk dengan profit terkecil
 
 
 
