@@ -83,3 +83,24 @@
 7. `newName= echo $a | tr '['$alphabetAwal'-za-'$alphabetAkhir']' ['a-z'] ` -->  Proses Dekripsi, nama file yang tersimpan dalam $a akan digantikan, Contoh : jam = 3, maka tr '[d-za-c]' '[a-z]' dimana ascii value dari d = a + 3
 8. `echo "$newName;$jam" >> log.csv` --> Untuk membantu proses dekripsi kembali maka disimpan nama file yang telah diencrypt beserta jamnya (jam file dibuat)
 9. `mv $a.txt $newName.txt` --> Proses Rename FILE
+
+## Nomor 3
+### Tiga A
+### Tiga B
+### Tiga C
+![Image of 3C](Shift/images/tigac.PNG)
+1. `a=mkdir kenangan b=mkdir duplicate` --> Membuat kenangan dan duplikat
+2. `x=1 y=1` --> Deklarasi nilai x dan y
+3. `ls | grep "pdkt_kusuma_"` --> menampilkan file yang memiliki nama pdkt_kusuma_
+4. `cut -d "_" -f 3 | sort -n | tail -1` --> memotong field ke3 dari hasil tadi dengan _ menjadi field separator, dan meng-sort serta mengambil yang paling bawah dan dimasukan ke tes sebagai nilai terakhir
+5. `arr=""` --> deklarasi string arr
+6. `for ((i=1;i<=tes;i=i+1))` --> untuk i=1 hingga i= nilai tes
+7. `cat wget.log | grep "Location" | head -$i | tail -1 | cut -d " " -f 2` --> menampilkan yang memiliki kata location di wget.log dan menampilkan yg dipilih dengan membagi dengan field dan menampilkan field ke 2
+8. `echo -e $arr | awk -v loc=$abc` --> menampilkan isi string dan mendeklarasikan variabel loc sama dengan nilai abc
+9. `'BEGIN{dupkahlagi=0} {if(loc==$0) dupkahlagi=1} END {printf "%d", dupkahlagi}` --> mendeklarasikan dupkahlagi sama dengan 0 dan jika loc sama dengan isi dari string maka dupkahlagi sama dengan 1
+10. `if [[ $dupkah == 0 ]]` --> mengecek dupkah lagi sama dengan 0
+11. `arr="$arr$abc\n" mv pdkt_kusuma_$i kenangan/kenangan_$x` --> jika 0, menampilkan isi string arr dan nilai abc, memmindahkan file pdkt_kusuma_$i ke kenangan/kenangan_$i
+12. `x=expr $x + 1` --> menambahkan x dengan 1
+13. `mv pdkt_kusuma_$i duplicate/duplicate_$y y=expr $y + 1` --> jika tidak pindahkan ke duplikat serta menambah y ditambah dengan 1
+14. `cat wget.log >> wget.log.bak` --> menambahkan isi wget.log ke wget.log.bak
+15. `rm wget.log` --> menghapus wget.log
