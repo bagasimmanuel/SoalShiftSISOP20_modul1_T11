@@ -86,6 +86,7 @@
 
 ## Nomor 3
 ### Tiga A
+![Image of 3A](Shift/images/TigaA.png)
 1. `ls | grep "pdkt_kusuma_"` --> menampilkan file yang memiliki nama pdkt_kusuma_
 2. `cut -d "_" -f 3 | sort -n | tail -1` --> memotong field ke3 dari hasil tadi dengan _ menjadi field separator, dan meng-sort serta mengambil yang paling bawah dan dimasukan ke tes sebagai nilai terakhir
 3. `if [[ $tes < 1 ]] then tes=0 fi` --> jika tes kurang dari 1 maka masukan nilai 0 ke dalam tes
