@@ -52,9 +52,12 @@
 ![Image of 2A & B](Shift/images/duaA.png)
 
 1. `a=$(echo $1 | tr -d [:digit:])` --> Deklarasi Variable a yang berisikan echo $1 yang telah dihapuskan digit dengan function -tr(translate) -d [:digit:]
-2. `< /dev/urandom tr -dc A-Za-z0-9 | head -c28  > $a.txt` --> Function random dengan parameter (batas hanya alphabet dan angka) sebanyak 28 karakter dan dimasukan ke file $a.txt
-3. `b = date +%H ` --> Variable b adalah jam waktu file itu dibuat
-4. `echo "$a;$b" >> log.csv` --> Memasukkan nama File ($a) dan ($b) kedalam suatu file csv yaitu log.csv (sebagai database seluruh file yang dibentuk dan jamnnya) DENGAN Separator ";"
+2. x1="`< /dev/urandom tr -dc a-z | head -c1`" --> Memasukan huruf kecil random pada urutan pertama
+3. x2="`< /dev/urandom tr -dc A-Z | head -c1`" --> Memasukan huruf kapital random pada urutan kedua
+4. x3="`< /dev/urandom tr -dc 0-9 | head -c1`" --> Memasukan angka random pada urutan ketiga
+5. `< /dev/urandom tr -dc A-Za-z0-9 | head -c25  > $a.txt` --> Function random dengan parameter (batas hanya alphabet dan angka) sebanyak 25 karakter dan dimasukan ke file $a.txt
+6. `b = date +%H ` --> Variable b adalah jam waktu file itu dibuat
+7. `echo "$a;$b" >> log.csv` --> Memasukkan nama File ($a) dan ($b) kedalam suatu file csv yaitu log.csv (sebagai database seluruh file yang dibentuk dan jamnnya) DENGAN Separator ";"
 
 ### Dua C
 
