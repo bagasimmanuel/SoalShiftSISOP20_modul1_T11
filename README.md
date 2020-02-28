@@ -86,7 +86,18 @@
 
 ## Nomor 3
 ### Tiga A
+1. `ls | grep "pdkt_kusuma_"` --> menampilkan file yang memiliki nama pdkt_kusuma_
+2. `cut -d "_" -f 3 | sort -n | tail -1` --> memotong field ke3 dari hasil tadi dengan _ menjadi field separator, dan meng-sort serta mengambil yang paling bawah dan dimasukan ke tes sebagai nilai terakhir
+3. `if [[ $tes < 1 ]] then tes=0 fi` --> jika tes kurang dari 1 maka masukan nilai 0 ke dalam tes
+4. `a=expr $tes + 1 b=expr $tes + 28` --> masukan nilai tes + 1 ke a dan tes + 28 ke dalam b
+5. `for ((i=a;i<=b;i=i+1))` --> dari a sampai dengan b diulang perintah dibawah
+6. `wget -a wget.log -O "pdkt_kusuma_$i" https://loremflickr.com/320/240/cat` --> download dengan output diganti pdkt_kusuma_$i dari https://loremflickr.com/320/240/ dan memasukan log ke wget.log
+
 ### Tiga B
+### 5 6-23/8 * * 0-5 /bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh
+1. `5 6-23/8 * * 0-5`--> pada menit ke 5, dari jam 6 sampai jam 23 per 8 jam setiap dari minggu sampai jumat 
+2. `/bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh` --> menjalankan soal3.sh pada direktori tersebut
+
 ### Tiga C
 ![Image of 3C](Shift/images/tigac.PNG)
 1. `a=mkdir kenangan b=mkdir duplicate` --> Membuat kenangan dan duplikat
