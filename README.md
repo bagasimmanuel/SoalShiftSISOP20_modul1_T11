@@ -98,7 +98,7 @@
 6. `wget -a wget.log -O "pdkt_kusuma_$i" https://loremflickr.com/320/240/cat` --> download dengan output diganti pdkt_kusuma_$i dari https://loremflickr.com/320/240/ dan memasukan log ke wget.log
 
 ### Tiga B
-### 5 6-23/8 * * 0-5 /bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh
+``` 5 6-23/8 * * 0-5 /bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh ```
 1. `5 6-23/8 * * 0-5`--> pada menit ke 5, dari jam 6 sampai jam 23 per 8 jam setiap dari minggu sampai jumat 
 2. `/bin/bash ~/SoalShiftSISOP20_modul1_T11/Shift/soal3.sh` --> menjalankan soal3.sh pada direktori tersebut
 
